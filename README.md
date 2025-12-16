@@ -82,6 +82,36 @@ JWT_SECRET=your_jwt_secret
 > Note: The actual `.env` file is not committed for security reasons.  
 > Use `.env.example` as a reference.
 
+## Database Configuration
+
+This application uses MongoDB for data persistence and supports both **MongoDB Atlas** and **local MongoDB**.
+
+The application code is not tightly coupled to a specific MongoDB deployment.  
+Switching between MongoDB Atlas and a local MongoDB instance only requires changing the environment configuration.
+
+### Option 1: MongoDB Atlas (Recommended for quick setup)
+
+1. Create a MongoDB Atlas cluster.
+2. Whitelist your IP address in Atlas Network Access.
+3. Set the connection string in the `.env` file:
+
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@<cluster-url>/todoapp
+```
+
+### Option 2: Local MongoDB
+
+1. Install MongoDB locally and ensure the MongoDB service is running.
+2. Update the `.env` file with the local connection string:
+
+```env
+MONGO_URI=mongodb://127.0.0.1:27017/todoapp
+```
+
+3. Restart the backend server.
+
+No application code changes are required when switching between MongoDB Atlas and local MongoDB.
+
 ## run the backend server
 
 ```bash
