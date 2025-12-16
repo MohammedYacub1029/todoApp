@@ -2,6 +2,18 @@
 
 A minimal full-stack task management application with user authentication and task CRUD functionality.
 
+## Design Overview
+
+This application follows a simple and clear separation of concerns to keep the system easy to understand, test, and extend.
+
+- **Backend** exposes RESTful APIs using Express. Business logic is handled in controllers, routing is isolated in route files, and cross-cutting concerns like authentication are handled via middleware.
+- **Authentication & Authorization** are implemented using JWT. Tokens are issued on login and verified on every protected request using middleware.
+- **Data Layer** uses MongoDB with Mongoose models to define schemas and enforce structure. Tasks are associated with users to ensure data isolation.
+- **Frontend** is a minimal React application that consumes the backend APIs, handles authentication state, and provides a simple UI for task management.
+- **Configuration** (such as database connection and secrets) is externalized using environment variables, allowing easy switching between MongoDB Atlas and local MongoDB without code changes.
+
+The design prioritizes correctness, clarity, and maintainability over premature optimization or unnecessary complexity.
+
 ## Backend
 
 Backend API for a simple Task Management application.
