@@ -45,6 +45,9 @@ This service provides:
 
 ## Folder Structure
 
+## Folder Structure
+
+```text
 todoApp/
 ├── backend/
 │   ├── src/
@@ -69,6 +72,7 @@ todoApp/
 ├── docs/
 │   └── TodoApp_Postman_Collection.json
 └── README.md
+```
 
 ---
 
