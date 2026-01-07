@@ -10,12 +10,12 @@ function App() {
   );
 
   useEffect(() => {
-    const handleStorageChange = () => {
+    const handleStorage = () => {
       setIsAuthenticated(!!localStorage.getItem("token"));
     };
 
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
+    window.addEventListener("storage", handleStorage);
+    return () => window.removeEventListener("storage", handleStorage);
   }, []);
 
   return (
